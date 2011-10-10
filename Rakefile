@@ -22,6 +22,7 @@ Jeweler::Tasks.new do |gem|
   gem.email = "jannis@gmail.com"
   gem.authors = ["Jannis Hermanns"]
   gem.executables = %w( stalk )
+  gem.files.include 'vendor/**/*.js'
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new

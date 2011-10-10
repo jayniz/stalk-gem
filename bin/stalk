@@ -1,8 +1,5 @@
 #!/usr/bin/env ruby
 
-require 'rubygems'
-require 'trollop'
-
 # Help us die gracefully
 def die(code = 0)
   puts "\nTest your API using stalker.js.\n\nUsage:\n  stalk my_endpoints.txt http://host1:80\n\n"
@@ -32,7 +29,7 @@ unless File.file?(tests) and File.readable?(tests)
 end
 
 # Where is stalker?
-stalker = File.expand_path File.join(File.realpath(__FILE__), '..', '..', 'vendor', 'stalker', 'stalk.js')
+stalker = File.expand_path File.join(__FILE__, '..', '..', 'vendor', 'stalker', 'stalk.js')
 
 # Replace our process with node
 cmd = "#{node} #{stalker} #{api} #{tests}"
