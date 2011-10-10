@@ -14,10 +14,10 @@ require 'rake'
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
-  gem.name = "stalker"
-  gem.homepage = "http://github.com/jayniz/stalker-gem"
+  gem.name = "stalk"
+  gem.homepage = "http://github.com/jayniz/stalk-gem"
   gem.license = "MIT"
-  gem.summary = %Q{Installs stalker for you and adds a convenient stalker command}
+  gem.summary = %Q{Installs stalker.js for you and adds a convenient stalk command}
   gem.description = %Q{Takes the javascript of stalker and provides the stalker command that uses node to run stalker.js}
   gem.email = "jannis@gmail.com"
   gem.authors = ["Jannis Hermanns"]
