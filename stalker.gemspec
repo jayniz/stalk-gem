@@ -29,8 +29,18 @@ Gem::Specification.new do |s|
     "VERSION",
     "bin/stalk",
     "lib/stalker-gem.rb",
+    "stalker.gemspec",
     "test/helper.rb",
-    "test/test_stalker-gem.rb"
+    "test/test_stalker-gem.rb",
+    "vendor/stalker/lib/example_parser.js",
+    "vendor/stalker/lib/object_compare.js",
+    "vendor/stalker/lib/shout.js",
+    "vendor/stalker/lib/stalker.js",
+    "vendor/stalker/lib/var_parser.js",
+    "vendor/stalker/stalk.js",
+    "vendor/stalker/vendor/multipartform.js",
+    "vendor/stalker/vendor/restler.js",
+    "vendor/stalker/vendor/underscore-min.js"
   ]
   s.homepage = %q{http://github.com/jayniz/stalker-gem}
   s.licenses = ["MIT"]
