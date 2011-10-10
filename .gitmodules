@@ -1,0 +1,3 @@
+[submodule "vendor/stalker"]
+	path = vendor/stalker
+	url = git@github.com:moviepilot/stalker.git

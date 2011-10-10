@@ -1,0 +1,40 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'trollop'
+
+# Help us die gracefully
+def die(code = 0)
+  puts "\nTest your API using stalker.js.\n\nUsage:\n  stalk my_endpoints.txt http://host1:80\n\n"
+  exit code
+end
+
+# Less than two args can't be good
+if ARGV.length != 2
+  die
+end
+
+# We use node.js to execute things
+node = `which node`.chomp
+unless File.executable?(node)
+  puts "Error: Can't execute node, make sure it's in your path (I tried #{node})"
+end
+
+# First argument is the definition of the tests, the
+# rest is hosts to test
+tests = ARGV.first
+api   = ARGV.last
+
+# We can't read test definition, we fail!
+unless File.file?(tests) and File.readable?(tests)
+  puts "Error: Can't open test definition file #{tests}"
+  die
+end
+
+# Where is stalker?
+stalker = File.expand_path File.join(File.realpath(__FILE__), '..', '..', 'vendor', 'stalker', 'stalk.js')
+
+# Replace our process with node
+cmd = "#{node} #{stalker} #{api} #{tests}"
+puts "Running: #{cmd}"
+exec cmd
